@@ -1,0 +1,276 @@
+body {
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+    font-family: "Open Sans", sans-serif;
+    color: #000;
+    margin: 100 auto;
+    padding: 0;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+   }
+
+.intro {
+    width: 60%;
+    position: relative;
+    left: 22%;
+    margin-left: -50px;
+}
+
+.intro p {
+    font-size: 20px;
+}
+
+.intro h1 {
+    text-align: center;
+}
+
+.start-button {
+    margin-left: 45%;
+    margin-right: 50%;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #2841f9;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all .5s;
+    padding: 20px;
+    width: 120px;
+    height: 60px;
+}
+
+.start-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.start-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.start-button:hover span {
+    padding-right: 25px;
+}
+
+.start-button:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+
+.stage {
+    font-size: 15px;
+    width: 60%;
+    position: relative;
+    left: 22%;
+    margin-left: -50px;
+    outline: 1px solid navy;
+    padding: 20px;
+}
+
+.stage p {
+    font-size: 20px;
+}
+
+.question {
+    width: 60%;
+    background-color: #D8D4EA;
+    border-radius: 20px;
+    margin-left: 20%;
+    color: #2841f9;
+    padding-left: 10px;
+}
+
+.question p {
+    font-size: 15px;
+}
+
+.area-button-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+
+.area-button-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+
+.area-button-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+
+.area-button-container input:checked~.checkmark {
+    background-color: #2841f9;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.area-button-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+
+.area-button-container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    background: white;
+}
+
+.button-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+
+.button-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+
+.button-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+
+.button-container input:checked~.checkmark {
+    background-color: #2841f9;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.area-button-container input:checked~.checkmark:after {
+    display: block;
+}
+
+.button-container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    background: white;
+}
+
+.submission-box{
+    background-color: #D8D4EA;
+    margin-left: 30%;
+    width: 40%;
+    text-align: left;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input[type=text], select {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+#results-graph {
+    width: 80%;
+    margin-left: 15%;
+    margin-right: 10%;
+    border: 1px solid #2841f9;
+}
+
+.summary{
+    float: left;
+    background-color: #D8D4EA;
+    border-radius: 20px;
+    width: 20%;
+    padding: 5%;
+    height: 200px;
+    text-align: center;
+    border: 1px solid #2841f9;
+}
+.summary p{
+    font-size: 15px;
+}

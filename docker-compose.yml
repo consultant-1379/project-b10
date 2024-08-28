@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+
+  mysqldb:
+    image: mysql
+    ports:
+      - "3306:3306"
+    container_name: mysqldb
+    networks:
+      - cloud-native-mysql
+    environment:
+      MYSQL_DATABASE: 'cloudnative'
+      MYSQL_ROOT_PASSWORD: 'password'
+
+  spring-backend:
+    build:
+      context: ./cloud-native
+    image: spring
+    container_name: spring-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - cloud-native-mysql
+    depends_on:
+      - mysqldb
+    links:
+      - mysqldb
+  
+  react-frontend:
+    build:
+      context: ./react-frontend
+    image: react
+    container_name: react-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - cloud-native-mysql
+    depends_on:
+      - spring-backend
+
+
+networks:
+  cloud-native-mysql:
